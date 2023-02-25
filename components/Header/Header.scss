@@ -1,33 +1,48 @@
-@import '../../assets/css/main.scss';
+@import "../../assets/css/main.scss";
 
 .Header {
-    background: $header-background;
+  background: $header-background;
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+  overflow: hidden;
+  position: relative;
+
+  &-Container {
     display: flex;
-    flex-direction: column;
-    margin: 0px;
+    justify-content: space-between;
+    padding-right: 3rem;
 
-    &-PageHeading {
-        color: $font-text-light;
+    @include mobile-view {
+      flex-direction: column-reverse;
+      padding: 0;
     }
 
-    &-Logo {
-        position: absolute;
-        right: 0px;
-        top: 10px;
-        width: 200px;
+    &Right {
+      padding: 2rem 0;
     }
+  }
 
-    &-PageSubheading {
-        font-weight: $font-medium;
-        color: $font-text-light-normal;
-        display: flex;
-        align-items: center;
+  &-PageHeading {
+    color: $font-text-light;
+  }
 
-        &CurrentSeason {
-            font-weight: $font-regular;
-            font-size: $text-m;
-            margin-left: $margin-small;
-            color: $font-text-light-dark;
-        }
+  &-Logo {
+    width: 100px;
+    object-fit: cover;
+  }
+
+  &-PageSubheading {
+    font-weight: $font-medium;
+    color: $font-text-light-normal;
+    display: flex;
+    align-items: center;
+
+    &CurrentSeason {
+      font-weight: $font-regular;
+      font-size: $text-m;
+      margin-left: $margin-small;
+      color: $font-text-light-dark;
     }
+  }
 }

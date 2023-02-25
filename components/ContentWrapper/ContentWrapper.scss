@@ -1,12 +1,16 @@
+@import "../../assets/css/main.scss";
+
 .ContentWrapper {
-  display: block;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
   margin: auto;
   max-width: 1200px;
-  width: 100%;
   padding: 0 1rem;
   position: relative;
+  width: 100%;
 
-  @media screen and (min-width: 500px) {
+  @include mobile-view {
     padding: 0 3rem;
   }
 }
