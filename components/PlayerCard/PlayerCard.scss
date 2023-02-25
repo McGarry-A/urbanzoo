@@ -39,8 +39,7 @@
     color: $primary-color;
     border: 2px solid $primary-color;
     font-size: $text-m;
-    font-weight: $font-medium;
-    letter-spacing: 0.1rem;
+    font-weight: $font-bold;
   }
 
   &-Caption {
@@ -50,6 +49,7 @@
     padding: 0 3rem;
     max-height: 0px;
     transition: max-height 0.2s ease-in;
+    pointer-events: none;
 
     &Title {
       margin: $margin-xsmall 0 0;

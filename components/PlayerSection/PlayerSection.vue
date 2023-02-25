@@ -1,14 +1,6 @@
 <template>
-  <section
-    v-for="(role) in roleNamesArr"
-    :key="role"
-    class="PlayerSection"
-  >
-    <div v-if="hasNoChildren(role)"></div>
-    <div
-      v-else
-      class="PlayerSection-Section"
-    >
+  <section v-for="role in roleNamesArr" :key="role" class="PlayerSection">
+    <div v-if="!hasNoChildren(role)" class="PlayerSection-Section">
       <ContentWrapper>
         <h3 class="PlayerSection-SectionHeading">{{ role }}</h3>
         <div class="PlayerSection-CardSectionWrapper">
