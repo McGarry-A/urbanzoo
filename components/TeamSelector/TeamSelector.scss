@@ -1,0 +1,33 @@
+@import '../../assets/css/main.scss';
+
+.TeamSelector {
+    background-color: $primary-color;
+    color: $font-white;
+
+    &-List {
+        list-style: none;
+        display: flex;
+        padding: 0;
+        margin: 0;
+
+
+        &Item {
+            margin-right: $margin-large;
+            font-size: $text-s;
+            letter-spacing: .05rem;
+            font-weight: $font-regular;
+            cursor: pointer;
+            padding: 0 0 $margin-small;
+            border-bottom: 5px solid $primary-color;
+            transition: .3s ease;
+
+            &:hover {
+                border-bottom: 5px solid #FFFF
+            }
+
+            &_isActive {
+                border-bottom: 5px solid $font-white;
+            }
+        }
+    }
+}

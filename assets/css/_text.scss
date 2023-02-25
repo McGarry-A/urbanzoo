@@ -1,0 +1,16 @@
+$font-bold: 700;
+$font-medium: 500;
+$font-regular: 400;
+$font-light: 300;
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    font-size: $text-xl;
+}
+
+h2 {
+    font-size: $text-l;
+}

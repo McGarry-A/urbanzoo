@@ -1,0 +1,21 @@
+@import '../../assets/css/main.scss';
+
+.Header {
+    background-color: $primary-color;
+    color: $font-white;
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+
+    &-PageSubheading {
+        font-weight: $font-bold;
+        display: flex;
+        align-items: center;
+
+        &CurrentSeason {
+            font-weight: $font-regular;
+            font-size: $text-m;
+            margin-left: $margin-small;
+        }
+    }
+}
