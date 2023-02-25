@@ -1,0 +1,17 @@
+@import '../../assets/css/main.scss';
+
+.PlayerSection {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    &-SectionHeading {
+        font-size: $text-l;
+    }
+
+    &-CardSectionWrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+}

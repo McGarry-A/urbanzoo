@@ -1,0 +1,41 @@
+@import '../../assets/css/main.scss';
+
+.PlayerCard {
+  position: relative;
+  color: white;
+  cursor: pointer;
+  margin: 0px;
+  overflow: hidden;
+
+  &-Link {
+    all: unset;
+  }
+
+  &-Image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.2s ease-in;
+
+    &:hover {
+      scale: 1.05;
+    }
+
+    &:hover + .PlayerCard-Caption {
+      max-height: 120px;
+    }
+  }
+
+  &-Caption {
+    position: absolute;
+    inset: auto 0 0;
+    background-color: rgba(149, 191, 229, 0.8);
+    padding: 0 3rem;
+    max-height: 0px;
+    transition: max-height .2s ease-in; 
+
+    &Title {
+        margin: $margin-small 0;
+    }
+  }
+}

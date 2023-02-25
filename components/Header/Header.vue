@@ -1,5 +1,5 @@
 <template>
-  <div class="Header">
+  <header class="Header">
     <ContentWrapper>
       <h1 class="Header-PageHeading">{{ pageHeading }}</h1>
       <h2 class="Header-PageSubheading">
@@ -9,7 +9,7 @@
         >
       </h2>
     </ContentWrapper>
-  </div>
+  </header>
 </template>
 
 <script>

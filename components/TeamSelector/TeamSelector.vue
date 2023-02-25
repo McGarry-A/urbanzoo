@@ -3,9 +3,14 @@
     <ContentWrapper>
       <ul class="TeamSelector-List">
         <li
-          class="TeamSelector-ListItem"
+          :class="
+            team.slug === activeSlug
+              ? 'TeamSelector-ListItem_isActive TeamSelector-ListItem'
+              : 'TeamSelector-ListItem'
+          "
           v-for="team in teams"
           :key="team.slug"
+          @click="handleMenuItemClick(team.slug)"
         >
           {{ team.name }}
         </li>
@@ -16,13 +21,24 @@
     
 <script>
 import pageData from "~~/data/page-data";
-import './TeamSelector.scss'
+import "./TeamSelector.scss";
 
 export default {
   data() {
     return {
       teams: pageData.teams,
     };
+  },
+  methods: {
+    handleMenuItemClick(slug) {
+      this.$emit("setActiveSlug", slug);
+    },
+  },
+  props: {
+    activeSlug: {
+      type: String,
+      required: true,
+    },
   },
 };
 </script>

@@ -1,7 +1,11 @@
 .ContentWrapper {
-    display: block;
-    margin: auto;
-    max-width: 1920px;
-    width: 100%;
+  display: block;
+  margin: auto;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 1rem;
+
+  @media screen and (min-width: 500px) {
     padding: 0 3rem;
+  }
 }
