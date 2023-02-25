@@ -6,6 +6,7 @@
       :role-names-arr="roleNamesArr"
       :player-sorted-by-roles-object="playerSortedByRolesObject"
     />
+    <Footer></Footer>
   </div>
 </template>
 

@@ -1,8 +1,15 @@
 <template>
-  <ContentWrapper>
-    <section v-for="role in roleNamesArr" :key="role" class="PlayerSection">
-      <div v-if="hasNoChildren(role)"></div>
-      <div v-else>
+  <section
+    v-for="(role, index) in roleNamesArr"
+    :key="role"
+    class="PlayerSection"
+  >
+    <div v-if="hasNoChildren(role)"></div>
+    <div
+      v-else
+      :class="index % 2 === 1 ? 'PlayerSection_Light' : 'PlayerSection_Dark'"
+    >
+      <ContentWrapper>
         <h3 class="PlayerSection-SectionHeading">{{ role }}</h3>
         <div class="PlayerSection-CardSectionWrapper">
           <PlayerCard
@@ -11,9 +18,9 @@
             :player="player"
           />
         </div>
-      </div>
-    </section>
-  </ContentWrapper>
+      </ContentWrapper>
+    </div>
+  </section>
 </template>
 
 <script>

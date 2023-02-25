@@ -21,6 +21,9 @@
         :title="fullName"
       />
       <figcaption class="PlayerCard-Caption">
+        <p class="PlayerCard-CaptionJoinedDate" v-show="joinDate">
+          Since {{ joinDateAsDateString }}
+        </p>
         <h4 class="PlayerCard-CaptionTitle">{{ fullName }}</h4>
         <p class="PlayerCard-CaptionPosition">{{ player.position }}</p>
       </figcaption>
@@ -33,14 +36,21 @@
 
 <script>
 import "./PlayerCard.scss";
+
 export default {
   computed: {
     fullName() {
       return `${this.player.firstName} ${this.player.surname}`;
     },
-    shirtNumber(){
-      return this.player.shirtNumber
-    }
+    shirtNumber() {
+      return this.player.shirtNumber;
+    },
+    joinDate() {
+      return this.player.joinDate;
+    },
+    joinDateAsDateString() {
+      return new Date(this.player.joinDate).toDateString();
+    },
   },
   props: {
     player: {

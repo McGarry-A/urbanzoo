@@ -8,6 +8,12 @@
           >({{ currentSeason }})</span
         >
       </h2>
+      <img
+        src="../../images/Logo.svg"
+        alt="Aston Villa F.C. Crest"
+        title="Aston Villa F.C. Crest"
+        class="Header-Logo"
+      />
     </ContentWrapper>
   </header>
 </template>

@@ -10,6 +10,13 @@
         color: $font-text-light;
     }
 
+    &-Logo {
+        position: absolute;
+        right: 0px;
+        top: 10px;
+        width: 200px;
+    }
+
     &-PageSubheading {
         font-weight: $font-medium;
         color: $font-text-light-normal;
