@@ -1,10 +1,6 @@
 <template>
-  <section
-    v-for="role in roles"
-    :key="role"
-    class="PlayerSection"
-  >
-    <div v-if="!hasNoChildren(role)" class="PlayerSection-Section">
+  <section v-for="role in roles" :key="role" class="PlayerSection">
+    <div v-if="hasChildren(role)" class="PlayerSection-Section">
       <ContentWrapper>
         <h3 class="PlayerSection-SectionHeading">{{ role }}</h3>
         <div class="PlayerSection-CardSectionWrapper">
@@ -28,8 +24,8 @@ export default {
     };
   },
   methods: {
-    hasNoChildren(role) {
-      return this.playerSortedByRolesObject[role] === undefined;
+    hasChildren(role) {
+      return this.playerSortedByRolesObject[role] !== undefined;
     },
   },
   computed: {

@@ -1,14 +1,14 @@
 <template>
   <figure class="PlayerCard">
     <a
-      :href="player.profilePageUrl"
+      :href="hrefUrl"
       class="PlayerCard-Link"
       target="_blank"
       rel="noopener noreferrer"
     >
       <img
         class="PlayerCard-Image"
-        v-if="this.player.hasOwnProperty('squadImage')"
+        v-if="hasSquadImage"
         :src="player.squadImage"
         :alt="fullName"
         :title="fullName"
@@ -27,7 +27,7 @@
         <h4 class="PlayerCard-CaptionTitle">{{ fullName }}</h4>
         <p class="PlayerCard-CaptionPosition">{{ player.position }}</p>
       </figcaption>
-      <div class="PlayerCard-ShirtNumber" v-if="shirtNumber !== 'unknown'">
+      <div class="PlayerCard-ShirtNumber" v-if="hasShirtNumber">
         <span class="PlayerCard-ShirtNumberText">{{ player.shirtNumber }}</span>
       </div>
     </a>
@@ -42,14 +42,22 @@ export default {
     fullName() {
       return `${this.player.firstName} ${this.player.surname}`;
     },
-    shirtNumber() {
-      return this.player.shirtNumber;
+    hasShirtNumber() {
+      return this.player.shirtNumber !== "unknown";
     },
     joinDate() {
       return this.player.joinDate;
     },
     joinDateAsDateString() {
       return new Date(this.player.joinDate).toDateString();
+    },
+    hrefUrl() {
+      return this.player.profilePageUrl === undefined
+        ? this.player.pageProfileUrl
+        : this.player.profilePageUrl;
+    },
+    hasSquadImage() {
+      return this.player.hasOwnProperty("squadImage");
     },
   },
   props: {
@@ -61,7 +69,8 @@ export default {
       position: String,
       squadImage: String || undefined,
       shirtNumber: String,
-      profilePageUrl: String,
+      profilePageUrl: String || undefined,
+      pageProfileUrl: String || undefined,
     },
   },
 };

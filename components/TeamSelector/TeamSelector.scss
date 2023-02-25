@@ -1,33 +1,36 @@
-@import '../../assets/css/main.scss';
+@import "../../assets/css/main.scss";
 
 .TeamSelector {
-    background-color: $primary-color;
-    color: $font-white;
+  background-color: $primary-color;
+  color: $font-white;
+  position: sticky;
+  padding-top: 10px;
+  top: 0px;
+  z-index: 9999;
 
-    &-List {
-        list-style: none;
-        display: flex;
-        padding: 0;
-        margin: 0;
+  &-List {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
 
+    &Item {
+      margin-right: $margin-large;
+      font-size: $text-s;
+      letter-spacing: 0.05rem;
+      font-weight: $font-light;
+      cursor: pointer;
+      padding: 0 0 $margin-small;
+      border-bottom: 5px solid $primary-color;
+      transition: 0.3s ease;
 
-        &Item {
-            margin-right: $margin-large;
-            font-size: $text-s;
-            letter-spacing: .05rem;
-            font-weight: $font-light;
-            cursor: pointer;
-            padding: 0 0 $margin-small;
-            border-bottom: 5px solid $primary-color;
-            transition: .3s ease;
+      &:hover {
+        border-bottom: 5px solid #ffff;
+      }
 
-            &:hover {
-                border-bottom: 5px solid #FFFF
-            }
-
-            &_isActive {
-                border-bottom: 5px solid $font-white;
-            }
-        }
+      &_isActive {
+        border-bottom: 5px solid $font-white;
+      }
     }
+  }
 }

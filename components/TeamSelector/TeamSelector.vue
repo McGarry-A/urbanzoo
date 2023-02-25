@@ -3,11 +3,7 @@
     <ContentWrapper>
       <ul class="TeamSelector-List">
         <li
-          :class="
-            team.slug === activeSlug
-              ? 'TeamSelector-ListItem_isActive TeamSelector-ListItem'
-              : 'TeamSelector-ListItem'
-          "
+          :class="getActiveLinkClasses(team)"
           v-for="team in teams"
           :key="team.slug"
           @click="handleMenuItemClick(team.slug)"
@@ -32,6 +28,11 @@ export default {
   methods: {
     handleMenuItemClick(slug) {
       this.$emit("setActiveSlug", slug);
+    },
+    getActiveLinkClasses(team) {
+      return team.slug === this.activeSlug
+        ? "TeamSelector-ListItem_isActive TeamSelector-ListItem"
+        : "TeamSelector-ListItem";
     },
   },
   props: {
