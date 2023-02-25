@@ -1,5 +1,9 @@
 <template>
-  <section v-for="role in roleNamesArr" :key="role" class="PlayerSection">
+  <section
+    v-for="role in roles"
+    :key="role"
+    class="PlayerSection"
+  >
     <div v-if="!hasNoChildren(role)" class="PlayerSection-Section">
       <ContentWrapper>
         <h3 class="PlayerSection-SectionHeading">{{ role }}</h3>
@@ -28,11 +32,13 @@ export default {
       return this.playerSortedByRolesObject[role] === undefined;
     },
   },
-  props: {
-    roleNamesArr: {
-      type: Array || null,
-      default: () => [],
+  computed: {
+    roles() {
+      if (!this.playerSortedByRolesObject) return [];
+      return Object.keys(this.playerSortedByRolesObject);
     },
+  },
+  props: {
     playerSortedByRolesObject: {
       type: Object,
       default: () => ({}),

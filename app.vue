@@ -3,7 +3,6 @@
     <Header />
     <TeamSelector :active-slug="activeSlug" @setActiveSlug="setActiveSlug" />
     <PlayerSection
-      :role-names-arr="roleNamesArr"
       :player-sorted-by-roles-object="playerSortedByRolesObject"
     />
     <Footer></Footer>
@@ -22,7 +21,6 @@ export default {
       activeSlug: "mens",
       teamData: null,
       playerSortedByRolesObject: null,
-      roleNamesArr: null,
     };
   },
   computed: {},
@@ -55,7 +53,6 @@ export default {
     }
 
     this.sortPlayersByRoles(this.activeSlug);
-    this.roleNamesArr = Object.keys(this.playerSortedByRolesObject);
   },
   watch: {
     activeSlug() {
