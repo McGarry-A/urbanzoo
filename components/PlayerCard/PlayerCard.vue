@@ -24,6 +24,9 @@
         <h4 class="PlayerCard-CaptionTitle">{{ fullName }}</h4>
         <p class="PlayerCard-CaptionPosition">{{ player.position }}</p>
       </figcaption>
+      <div class="PlayerCard-ShirtNumber" v-if="shirtNumber !== 'unknown'">
+        <span class="PlayerCard-ShirtNumberText">{{ player.shirtNumber }}</span>
+      </div>
     </a>
   </figure>
 </template>
@@ -35,6 +38,9 @@ export default {
     fullName() {
       return `${this.player.firstName} ${this.player.surname}`;
     },
+    shirtNumber(){
+      return this.player.shirtNumber
+    }
   },
   props: {
     player: {

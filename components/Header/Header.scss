@@ -1,14 +1,18 @@
 @import '../../assets/css/main.scss';
 
 .Header {
-    background-color: $primary-color;
-    color: $font-white;
+    background: $header-background;
     display: flex;
     flex-direction: column;
     margin: 0px;
 
+    &-PageHeading {
+        color: $font-text-light;
+    }
+
     &-PageSubheading {
-        font-weight: $font-bold;
+        font-weight: $font-medium;
+        color: $font-text-light-normal;
         display: flex;
         align-items: center;
 
@@ -16,6 +20,7 @@
             font-weight: $font-regular;
             font-size: $text-m;
             margin-left: $margin-small;
+            color: $font-text-light-dark;
         }
     }
 }

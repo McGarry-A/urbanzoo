@@ -1,6 +1,8 @@
 <template>
   <ContentWrapper>
     <section v-for="role in roleNamesArr" :key="role" class="PlayerSection">
+      <div v-if="hasNoChildren(role)"></div>
+      <div v-else>
         <h3 class="PlayerSection-SectionHeading">{{ role }}</h3>
         <div class="PlayerSection-CardSectionWrapper">
           <PlayerCard
@@ -8,7 +10,8 @@
             :key="player.surname"
             :player="player"
           />
-          </div>
+        </div>
+      </div>
     </section>
   </ContentWrapper>
 </template>
@@ -21,12 +24,19 @@ export default {
       data: null,
     };
   },
+  methods: {
+    hasNoChildren(role) {
+      return this.playerSortedByRolesObject[role] === undefined;
+    },
+  },
   props: {
     roleNamesArr: {
       type: Array || null,
+      default: () => [],
     },
     playerSortedByRolesObject: {
-      type: Object || null,
+      type: Object,
+      default: () => ({}),
     },
   },
 };
