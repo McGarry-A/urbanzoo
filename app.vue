@@ -1,17 +1,21 @@
 <template>
   <div>
     <Header />
-    <TeamSelector :active-slug="activeSlug" @setActiveSlug="setActiveSlug" />
-    <PlayerSection
+    <team-selector :active-slug="activeSlug" @setActiveSlug="setActiveSlug" />
+    <player-section
       :player-sorted-by-roles-object="playerSortedByRolesObject"
     />
-    <Footer></Footer>
+    <Footer />
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import pageData from "~/data/page-data";
 import playerData from "./data/player-data";
+import Header from "./components/Header/Header.vue";
+import Footer from "./components/Footer/Footer.vue";
+import { PlayerSortedByRolesInterface } from "./types/playerSortedByRoles.interface";
+import { TeamDataInterface } from "./types/teamData.interface";
 
 export default {
   data() {
@@ -19,30 +23,37 @@ export default {
       heading: pageData.pageHeading,
       currentSeason: pageData.currentSeason,
       activeSlug: "mens",
-      teamData: null,
-      playerSortedByRolesObject: null,
+      teamData: {} as TeamDataInterface,
+      playerSortedByRolesObject: {} as PlayerSortedByRolesInterface,
     };
   },
-  computed: {},
+  components: {
+    Header,
+    Footer,
+    TeamSelector: () => import("./components/TeamSelector/TeamSelector.vue"),
+    PlayerSection: () => import("./components/PlayerSection/PlayerSection.vue"),
+  },
   methods: {
-    setActiveSlug(slug) {
+    setActiveSlug(slug: string) {
       this.activeSlug = slug;
     },
-    sortPlayersByRoles(activeSlug) {
-      const playersSortedByPosition = {};
+    sortPlayersByRoles(activeSlug: string) {
+      const playerSortedByRolesObject: PlayerSortedByRolesInterface = {};
       const teamData = this.teamData;
+
+      if (!teamData) return;
 
       teamData[activeSlug].players.forEach((player) => {
         const playerPosition = player.position;
 
-        if (playersSortedByPosition[playerPosition]) {
-          playersSortedByPosition[playerPosition].push(player);
+        if (playerSortedByRolesObject[playerPosition]) {
+          playerSortedByRolesObject[playerPosition].push(player);
         } else {
-          playersSortedByPosition[playerPosition] = [player];
+          playerSortedByRolesObject[playerPosition] = [player];
         }
       });
 
-      this.playerSortedByRolesObject = playersSortedByPosition;
+      this.playerSortedByRolesObject = playerSortedByRolesObject;
     },
   },
   async mounted() {

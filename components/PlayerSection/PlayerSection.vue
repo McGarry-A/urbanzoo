@@ -15,16 +15,11 @@
   </section>
 </template>
 
-<script>
+<script lang="ts">
 import "./PlayerSection.scss";
 export default {
-  data() {
-    return {
-      data: null,
-    };
-  },
   methods: {
-    hasChildren(role) {
+    hasChildren(role: string) {
       return this.playerSortedByRolesObject[role] !== undefined;
     },
   },

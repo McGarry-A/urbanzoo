@@ -34,8 +34,9 @@
   </figure>
 </template>
 
-<script>
+<script lang="ts">
 import "./PlayerCard.scss";
+import { PlayerDataInterface } from "../../types/teamData.Interface";
 
 export default {
   computed: {
@@ -61,16 +62,9 @@ export default {
     },
   },
   props: {
-    player: {
-      firstName: String,
-      surname: String,
-      country: String,
-      joinDate: String,
-      position: String,
-      squadImage: String || undefined,
-      shirtNumber: String,
-      profilePageUrl: String || undefined,
-      pageProfileUrl: String || undefined,
+    player : {
+      type: Object as () => PlayerDataInterface,
+      default: () => ({}),
     },
   },
 };

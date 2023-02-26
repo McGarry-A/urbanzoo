@@ -1,10 +1,17 @@
 <template>
   <footer class="Footer">
-    <h1 class="Footer-Slogan">PREPARED</h1>
+    <ContentWrapper>
+      <h1 class="Footer-Slogan">PREPARED</h1>
+    </ContentWrapper>
   </footer>
 </template>
 
-<script>
+<script lang="ts">
 import "./Footer.scss";
-export default {};
+import ContentWrapper from "../ContentWrapper/ContentWrapper.vue";
+export default {
+  components: {
+    ContentWrapper,
+  },
+};
 </script>

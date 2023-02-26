@@ -24,7 +24,7 @@
   </header>
 </template>
 
-<script>
+<script lang="ts">
 import data from "../../data/page-data";
 import "./Header.scss";
 export default {
@@ -34,6 +34,9 @@ export default {
       currentSeason: data.currentSeason,
       teamsTitle: "Your Teams",
     };
+  },
+  components: {
+    ContentWrapper: () => import("../ContentWrapper/ContentWrapper.vue"),
   },
 };
 </script>
