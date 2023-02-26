@@ -17,6 +17,7 @@
     
 <script lang="ts">
 import pageData from "~~/data/page-data";
+import ContentWrapper from "../ContentWrapper/ContentWrapper.vue";
 import "./TeamSelector.scss";
 
 export default {
@@ -24,6 +25,9 @@ export default {
     return {
       teams: pageData.teams,
     };
+  },
+  components: {
+    ContentWrapper,
   },
   methods: {
     handleMenuItemClick(slug: string) {
