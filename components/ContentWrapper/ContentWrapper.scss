@@ -1,12 +1,13 @@
 @import "../../assets/css/main.scss";
 
 .ContentWrapper {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   margin: auto;
   max-width: $width-max;
   padding: 0 $padding-s;
   position: relative;
-  width: 100%;
 
   @include mobile-view {
     margin: 0px;
