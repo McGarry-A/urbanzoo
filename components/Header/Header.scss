@@ -11,7 +11,7 @@
   &-Container {
     display: flex;
     justify-content: space-between;
-    padding-right: 3rem;
+    padding-right: $padding-m;
 
     @include mobile-view {
       flex-direction: column-reverse;

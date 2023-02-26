@@ -1,12 +1,10 @@
 <template>
-  <div>
     <Header />
     <team-selector :active-slug="activeSlug" @setActiveSlug="setActiveSlug" />
     <player-section
       :player-sorted-by-roles-object="playerSortedByRolesObject"
     />
     <Footer />
-  </div>
 </template>
 
 <script lang="ts">
