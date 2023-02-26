@@ -6,4 +6,5 @@
 
 <script>
 import './ContentWrapper.scss'
+export default {}
 </script>

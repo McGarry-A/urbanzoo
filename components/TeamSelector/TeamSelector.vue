@@ -15,7 +15,7 @@
   </div>
 </template>
     
-<script>
+<script lang="ts">
 import pageData from "~~/data/page-data";
 import "./TeamSelector.scss";
 
@@ -26,10 +26,10 @@ export default {
     };
   },
   methods: {
-    handleMenuItemClick(slug) {
+    handleMenuItemClick(slug: string) {
       this.$emit("setActiveSlug", slug);
     },
-    getActiveLinkClasses(team) {
+    getActiveLinkClasses(team: TeamType) {
       return team.slug === this.activeSlug
         ? "TeamSelector-ListItem_isActive TeamSelector-ListItem"
         : "TeamSelector-ListItem";
@@ -41,5 +41,10 @@ export default {
       required: true,
     },
   },
+};
+
+type TeamType = {
+  name: string;
+  slug: string;
 };
 </script>
