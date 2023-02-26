@@ -9,8 +9,8 @@ export interface PlayerDataInterface {
   firstName: string;
   joinDate: string;
   position: string;
-  profilePageUrl: string | "unknown";
-  pageProfileUrl: string | "unknown";
+  profilePageUrl: string | undefined;
+  pageProfileUrl: string | undefined;
   shirtNumber: string | "unknown";
   squadImage: string | undefined;
   surname: string;
