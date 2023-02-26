@@ -7,7 +7,7 @@
           <h2 class="Header-PageSubheading">
             {{ teamsTitle }}
             <span class="Header-PageSubheadingCurrentSeason"
-              >({{ currentSeason }})</span
+              >{{ currentSeason }}</span
             >
           </h2>
         </div>

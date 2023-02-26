@@ -25,6 +25,10 @@
 
   &-PageHeading {
     color: $font-text-light;
+
+    @include mobile-view {
+      margin: 0px;
+    }
   }
 
   &-Logo {
@@ -36,11 +40,12 @@
     font-weight: $font-medium;
     color: $font-text-light-normal;
     display: flex;
-    align-items: center;
+    align-items: baseline;
+    margin-bottom: 0px;
 
     &CurrentSeason {
       font-weight: $font-regular;
-      font-size: $text-m;
+      font-size: $text-s;
       margin-left: $margin-small;
       color: $font-text-light-dark;
     }
