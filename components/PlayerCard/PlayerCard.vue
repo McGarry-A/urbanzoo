@@ -62,7 +62,7 @@ export default {
     },
   },
   props: {
-    player : {
+    player: {
       type: Object as () => PlayerDataInterface,
       default: () => ({}),
     },
