@@ -6,9 +6,9 @@
           <h1 class="Header-PageHeading">{{ pageHeading }}</h1>
           <h2 class="Header-PageSubheading">
             {{ teamsTitle }}
-            <span class="Header-PageSubheadingCurrentSeason"
-              >{{ currentSeason }}</span
-            >
+            <span class="Header-PageSubheadingCurrentSeason">{{
+              currentSeason
+            }}</span>
           </h2>
         </div>
         <div class="Header-ContainerRight">
@@ -27,6 +27,7 @@
 <script lang="ts">
 import data from "../../data/page-data";
 import "./Header.scss";
+import ContentWrapper from "../ContentWrapper/ContentWrapper.vue";
 export default {
   data() {
     return {
@@ -36,7 +37,7 @@ export default {
     };
   },
   components: {
-    ContentWrapper: () => import("../ContentWrapper/ContentWrapper.vue"),
+    ContentWrapper,
   },
 };
 </script>
