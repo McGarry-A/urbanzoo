@@ -5,8 +5,12 @@
   color: $font-white;
   position: sticky;
   padding-top: 10px;
-  top: 0px;
+  top: -3px;
   z-index: 9999;
+
+  @include mobile-view {
+    padding-top: 20px;
+  }
 
   &-List {
     list-style: none;
